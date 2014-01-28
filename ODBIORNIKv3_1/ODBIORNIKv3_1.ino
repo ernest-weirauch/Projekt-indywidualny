@@ -63,11 +63,11 @@ void setup(){
   timer.connect(1, 15, pomiar_odl); 
   timer.connect(2, 40, pomiar_jasnosci); //25fps
   
-  delay(500);
+  delay(50);
 }
 
 void loop(){
-  timer.update(); //aktualizacja stanu timera
+  timer.update(); //aktualizacja stanu timera 
 }
 //================================================================
 void rc(){
@@ -99,10 +99,7 @@ void rc(){
       else if(!flaga && stan.brk) brk(0);
 
       turn(msg.skret);
-                     
-      if(msg.swiatla) analogWrite(lightsPin, stan.jasnosc);
-      else digitalWrite(lightsPin, LOW);
-           
+                                
       if(msg.kierunkowskazL) kierunkowskazL(1); //kierunkowskazy
         else kierunkowskazL(0);
       if(msg.kierunkowskazP) kierunkowskazP(1);
@@ -158,10 +155,10 @@ void pomiar_odl(){
 
 void pomiar_jasnosci(){
   if(!msg.swiatla) return;
-  else stan.jasnosc = map( analogRead(A0), 0, 1023, 255, 0 );
+  else stan.jasnosc = map( analogRead(A0), 0, 1023, 255, 0 ); //jasniejsze otoczenie = wiekszy opor = ciemniejsze swiatla
 }
 
-void kierunkowskazL(bool todo){
+void kierunkowskazL(bool todo){ //todo=1 wlacz, todo=0 wylacz
   static uint8_t czas = 499;
   static bool sstatus=0;
    if(todo==0){
