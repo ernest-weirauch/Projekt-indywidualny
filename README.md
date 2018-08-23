@@ -1,7 +1,7 @@
 # RC_Car
-My Arduino project to pass one of the univeristy subject.
-Language: PL
-I am not embedded C programmer so, when I could I used OOP. I tried to make code as readable as possible.
+My Arduino project to pass one of the univeristy subject. <br />
+Language: PL<br />
+I am not embedded C programmer so, when I could I used OOP. I tried to make code as readable as possible.<br />
 
 Project consists 2 elements:
 - Sender (nadajnik), which sends control commands by 2.4Ghz radio (NRF24L01 module). Control commands are created based on wired PlayStation controller.
