@@ -1,5 +1,6 @@
 # RC_Car
 My Arduino project to pass one of the univeristy subject.
+Language: PL
 I am not embedded C programmer so, when I could I used OOP. I tried to make code as readable as possible.
 
 Project consists 2 elements:
